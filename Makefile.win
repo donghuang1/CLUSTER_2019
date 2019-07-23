@@ -1,0 +1,31 @@
+# Project: DataCaching Algorithm
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = "main\ v4.o" "function_define\ v2.o"
+LINKOBJ  = "main v4.o" "function_define v2.o"
+LIBS     = -L"H:/Devc++/Dev-Cpp/MinGW64/lib" -L"H:/Devc++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"H:/Devc++/Dev-Cpp/MinGW64/include" -I"H:/Devc++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"H:/Devc++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"H:/Devc++/Dev-Cpp/MinGW64/include" -I"H:/Devc++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"H:/Devc++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"H:/Devc++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "DataCaching Algorithm.exe"
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"main\ v4.o": main\ v4.c
+	$(CC) -c "main v4.c" -o "main v4.o" $(CFLAGS)
+
+"function_define\ v2.o": function_define\ v2.c
+	$(CC) -c "function_define v2.c" -o "function_define v2.o" $(CFLAGS)
